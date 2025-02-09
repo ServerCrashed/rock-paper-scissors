@@ -22,7 +22,7 @@ function playGame(){
     let humanScore=0, computerScore=0;
 
     function playRound(hC, cC){
-        if(hC===cC) console.log("That's a tie! Both chose "+hC);
+        if(hC===cC) console.log(`That's a tie! Both chose ${hC}.`);
 
         else if((hC==="rock" && cC==="scissors") || (hC==="paper" && cC==="rock") || (hC==="scissors" && cC==="paper")){
             win(hC, cC);
