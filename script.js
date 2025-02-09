@@ -1,4 +1,5 @@
 const a = ["rock", "paper", "scissors"];
+const na=[0,1,2];
 
 let getComputerChoice = () => a[Math.floor(Math.random()*3)];
 
@@ -7,7 +8,15 @@ const message = `Enter the number pertaining to your choice:-
 1 : paper
 2 : scissors
 `;
-let getHumanChoice = () => a[+prompt(message)];
+let getHumanChoice = () => {
+    let pr = +prompt(message);
+    if(na.includes(pr)) return a[pr];
+    else {
+        alert("Invalid choice! Please choose from 0, 1 or 2 for their respective choices.");
+        return getHumanChoice();
+    }
+    
+}
 
 function playGame(){
     let humanScore=0, computerScore=0;
