@@ -22,31 +22,13 @@ function playGame(){
     let humanScore=0, computerScore=0;
 
     function playRound(hC, cC){
-        if(hC===cC) console.log("That's a tie!");
+        if(hC===cC) console.log("That's a tie! Both chose "+hC);
 
-        else if(hC==="rock" && cC==="scissors") {
+        else if((hC==="rock" && cC==="scissors") || (hC==="paper" && cC==="rock") || (hC==="scissors" && cC==="paper")){
             win(hC, cC);
             humanScore+=1;
         }
-        else if(hC==="rock" && cC==="paper") {
-            lose(hC, cC); 
-            computerScore+=1;
-        }
-
-        else if(hC==="paper" && cC==="rock") {
-            win(hC, cC);
-            humanScore+=1;
-        }
-        else if(hC==="paper" && cC==="scissors") {
-            lose(hC, cC); 
-            computerScore+=1;
-        }
-
-        else if(hC==="scissors" && cC==="paper") {
-            win(hC, cC);
-            humanScore+=1;
-        }
-        else if(hC==="scissors" && cC==="rock") {
+        else if((hC==="rock" && cC==="paper") || (hC==="paper" && cC==="scissors") || (hC==="scissors" && cC==="rock")){
             lose(hC, cC); 
             computerScore+=1;
         }
